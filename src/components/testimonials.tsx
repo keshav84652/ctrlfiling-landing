@@ -47,11 +47,6 @@ const testimonials = [
     quote: "For a growing firm, the scalability is perfect. We started with the Solo plan and upgraded as we grew. The platform has supported our expansion from 3 to 15 team members without missing a beat.",
   },
   {
-    name: "Thomas Anderson, EA",
-    handle: "Anderson Bookkeeping",
-    quote: "The document storage and organization features alone are worth the subscription cost. Everything is searchable, secure, and accessible. We've eliminated physical filing and reduced our office space needs.",
-  },
-  {
     name: "Maria Garcia, CPA, CFF",
     handle: "Garcia Financial Consulting",
     quote: "Client satisfaction has never been higher. The real-time updates and transparent process through the client portal have eliminated most status calls. Our clients feel more confident in our services than ever before.",
@@ -62,7 +57,7 @@ export function Testimonials() {
   return (
     <div className="relative pb-22">
       <h3 className="text-4xl mb-8 font-medium">What people say</h3>
-      <InfiniteMovingCards items={testimonials} direction="left" speed="slow" />
+      <InfiniteMovingCards items={testimonials} direction="left" speed="slower" />
     </div>
   );
 }

@@ -269,7 +269,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Testimonials />
+      {/* <Testimonials /> */}
     </>
   );
 }

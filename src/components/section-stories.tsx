@@ -136,7 +136,7 @@ const stories = [
       {
         type: "paragraph",
         content:
-          "We were using multiple disconnected systems - one for client communication, another for document storage, and our tax software for preparation. Data had to be manually transferred between systems, leading to errors and wasted time. We needed something that could tie everything together seamlessly.",
+          "We were using multiple disconnected systems - one for client communication, another for document processing, and our tax software for preparation. Data had to be manually transferred between systems, leading to errors and wasted time. We needed something that could tie everything together seamlessly.",
       },
       {
         type: "question",
