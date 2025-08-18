@@ -1,22 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
 
 export function HeroImage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Show immediately on mount, then animate when loaded
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   return (
     <div className="scale-100 sm:scale-100 md:scale-[0.9] lg:scale-[0.7] xl:scale-100 mt-10 md:mt-0 lg:absolute -right-[420px] -top-[100px] 2xl:scale-[1.35] 2xl:-top-[20px] z-10">
       <motion.div
-        initial={{ opacity: 0.8, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="[transform:perspective(4101px)_rotateX(51deg)_rotateY(-13deg)_rotateZ(40deg)]">
           <img
