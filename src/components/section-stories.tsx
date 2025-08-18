@@ -9,13 +9,8 @@ import {
   DialogTrigger,
 } from "@/ui/dialog";
 import { Icons } from "@/ui/icons";
-import dynamic from "next/dynamic";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { type Story, StoryCard } from "./story-card";
-
-const ReactHlsPlayer = dynamic(() => import("react-hls-player"), {
-  ssr: false,
-});
 
 const stories = [
   {
@@ -210,46 +205,6 @@ const stories = [
   },
 ];
 
-function Video({ src }: { src: string }) {
-  const playerRef = useRef(undefined);
-  const [isPlaying, setPlaying] = useState(false);
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      playerRef.current?.pause();
-    } else {
-      playerRef.current?.play();
-    }
-
-    setPlaying((prev) => !prev);
-  };
-
-  return (
-    <div className="w-full h-[280px] relative">
-      <ReactHlsPlayer
-        src={src}
-        onClick={togglePlay}
-        autoPlay={false}
-        poster="https://cdn.midday.ai/guy-cover.png"
-        playerRef={playerRef}
-        className="w-full"
-      />
-
-      {!isPlaying && (
-        <div className="absolute bottom-4 left-4 space-x-4 items-center justify-center z-30 transition-all">
-          <Button
-            size="icon"
-            type="button"
-            className="rounded-full size-10 md:size-14 transition ease-in-out hover:scale-110 hover:bg-white bg-white"
-            onClick={togglePlay}
-          >
-            <Icons.Play size={24} className="text-black" />
-          </Button>
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function SectionStories() {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
@@ -306,8 +261,6 @@ export default function SectionStories() {
         </div>
 
         <div className="space-y-4">
-          {selectedStory?.video && <Video src={selectedStory?.video} />}
-
           {selectedStory?.content?.map((item, index) =>
             item.type === "heading" ? (
               <h2 key={index.toString()} className="text-2xl font-medium">
