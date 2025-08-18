@@ -15,6 +15,7 @@ export function DynamicImage({
   darkSrc,
   alt,
   className,
+  onLoad,
   ...props
 }: DynamicImageProps) {
   return (
@@ -23,12 +24,14 @@ export function DynamicImage({
         src={lightSrc}
         alt={alt}
         className={cn("dark:hidden", className)}
+        onLoad={onLoad}
         {...props}
       />
       <Image
         src={darkSrc}
         alt={alt}
         className={cn("hidden dark:block", className)}
+        onLoad={onLoad}
         {...props}
       />
     </>
