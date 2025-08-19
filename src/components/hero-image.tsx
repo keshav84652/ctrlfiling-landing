@@ -9,8 +9,8 @@ export function HeroImage() {
   return (
     <div className="scale-100 sm:scale-100 md:scale-[0.9] lg:scale-[0.7] xl:scale-100 mt-10 md:mt-0 lg:absolute -right-[420px] -top-[100px] 2xl:scale-[1.35] 2xl:-top-[20px] z-10">
       <div className="[transform:perspective(4101px)_rotateX(51deg)_rotateY(-13deg)_rotateZ(40deg)]">
-        {/* Black placeholder background - no loading expectation */}
-        <div className="absolute inset-0 bg-black" />
+        {/* Background-matching placeholder - invisible until image loads */}
+        <div className="absolute inset-0 bg-[#fbfbfb] dark:bg-[#0C0C0C]" />
         
         <motion.img
           src="/hero-light.png"
