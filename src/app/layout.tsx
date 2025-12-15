@@ -88,6 +88,7 @@ export default function Layout({ children }: { children: ReactElement }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         <link rel="preload" as="image" href="/hero-light.png" />
+        <link rel="preload" as="image" href="/ctrlfiling-logo.svg" />
       </head>
       <body
         className={cn(
